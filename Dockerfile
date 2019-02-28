@@ -9,9 +9,9 @@ RUN sed -i s/archive.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list && \
 RUN apt-get update && apt-get install -y curl
 
 # Install miniconda to /miniconda
-RUN curl -LO https://mirrors.ustc.edu.cn/anaconda/miniconda/Miniconda2-latest-Linux-x86_64.sh
-RUN bash Miniconda2-latest-Linux-x86_64.sh -p /miniconda -b
-RUN rm Miniconda2-latest-Linux-x86_64.sh
+RUN curl -LO https://mirrors.ustc.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh
+RUN bash Miniconda3-latest-Linux-x86_64.sh -p /miniconda -b
+RUN rm Miniconda3-latest-Linux-x86_64.sh
 ENV PATH=/miniconda/bin:${PATH}
 RUN conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/ && \
     conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/ && \
